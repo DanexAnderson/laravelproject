@@ -1,0 +1,21 @@
+
+Components:
+
+1) install Forms: composer require "laravelcollective/html":"^5.4.0"
+2) Add to /config/app.php: providers => Collective\Html\HtmlServiceProvider::class,
+3) Add to /config/app.php: Aliases =>
+            'Form' => Collective\Html\FormFacade::class,
+            'Html' => Collective\Html\HtmlFacade::class,
+4) Set permissions; run in project folder : sudo chmod 777 -R bootstrap/cache
+5) Add css/bootstrap : npm install ; npm run dev
+        Add to <head> of app.blade.php => <link rel="stylesheet" href="/css/app.css">
+6) Add JQeury Add before </body> of app.blade.php =>
+                <script src="{{asset('js/app.js')}}" type="text/javascript"></script>
+7) setup database in .env
+8) Create controller or model : php artisan make:controller name ; php artisan make:model name -m
+9) Create database Tables: php artisan migrate
+10) Create a provider:  php artisan make:provider FormServiceProvider
+11) php artisan tinker : $var = new namespace/ModelClassName (); $var->fieldname='mydata';
+        $var->save();  <Populate database Table>
+12)
+

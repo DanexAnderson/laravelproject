@@ -1,0 +1,30 @@
+#footer{
+    margin-top: 70%;
+    padding: 20px;
+    clear: both;
+    position: relative;
+    color: #fff;
+    background:#333;
+}
+
+.navItem:hover {
+    background: rgb(104, 164, 255);
+}
+
+.active1 {
+    background: rgb(23, 116, 255);
+
+}
+
+a {
+    text-decoration: none;
+}
+
+#navbar {
+    transition: top 0.4s;
+
+}
+
+/*
+
+*/
