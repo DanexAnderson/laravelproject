@@ -17,12 +17,27 @@
   background: #1774ff;
 }
 
-a {
+a,
+a:hover {
   text-decoration: none;
 }
 
 #navbar {
   transition: top 0.4s;
+}
+
+.leftmargin {
+  -webkit-margin-start: 7%;
+          margin-inline-start: 7%;
+}
+
+.dropdown:hover > .dropdown-menu > .dropdown-item:hover {
+  background: #c2dcff;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td,
+.table-striped > tbody > tr:nth-child(2n+1) > th {
+  background-color: #d6e9ff;
 }
 
 /*

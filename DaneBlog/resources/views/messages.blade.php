@@ -1,17 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Messages</h1>
+<h1 class='container'>Messages</h1>
 
 @if(count($messages)>0)
     @foreach($messages as $message)
-    <div class="card">
+    <div class='col-lg-9 col-md-12'>
+    <div class="card  ">
         <ul class="list-group ">
 
-        <li class="list-group-item card-header bg-light">Name: {{$message->name}}</li>
+        <li class="list-group-item card-header text-white bg-info"><b>Name: {{$message->name}}</b></li>
         <li class="list-group-item card-header bg-light">Email: {{$message->email}}</li>
         <li class="list-group-item card-body">Message: {{$message->message}}</li>
         </ul>
+        </div>
         </div>
         <br/>
     @endforeach
@@ -20,7 +22,13 @@
 @endsection
 
 @section('sidebar')
+@parent
 
+@if(Auth::user())
+<a class='btn btn-default text-primary' href='/home'><h3><< Back </h3></a>
+@else
+<a class='btn btn-default text-primary' href='/'><h3><< Back </h3></a>
+@endif
 
 <p> Post results </p>
 @endsection

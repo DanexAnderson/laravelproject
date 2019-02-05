@@ -7,6 +7,7 @@
     background:#333;
 }
 
+
 .navItem:hover {
     background: rgb(104, 164, 255);
 }
@@ -16,7 +17,7 @@
 
 }
 
-a {
+a,a:hover {
     text-decoration: none;
 }
 
@@ -24,6 +25,22 @@ a {
     transition: top 0.4s;
 
 }
+
+.leftmargin {
+
+    margin-inline-start: 7%;
+}
+
+
+.dropdown:hover>.dropdown-menu>.dropdown-item:hover {
+    //display: block;
+    background: rgb(194, 220, 255);
+
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: rgb(214, 233, 255);
+ }
 
 /*
 

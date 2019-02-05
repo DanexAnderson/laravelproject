@@ -2,7 +2,9 @@
 
 @section('content')
 
-<div class='card bg-light'>
+<div class="col-lg-9 col-md-12 ">
+
+<div class='card bg-light add'>
 
 <h2 class='card-title pl-3 pt-2'>{{$todo->text}}<hr/></h2>
 
@@ -23,7 +25,7 @@
 
 {!! Form::close() !!}
 
-
+</div>
 @endsection
 
 
@@ -31,7 +33,7 @@
 
 @parent
 
-<a class='btn btn-default text-primary' href='/todo'><h2><< Back </h2></a>
+<a class='btn btn-default text-primary ' href='/todo'><h3><< Back </h3></a>
 
 
       <br/><br/>

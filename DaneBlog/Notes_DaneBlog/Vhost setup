@@ -1,6 +1,6 @@
 
 1) sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/myfile.conf
-2) Edit myfile.conf => /etc/apache2/sites-available/myfile.conf :
+2) Edit myfile.conf => /etc/apache2/sites-available/myfile.conf =>
 
 ServerAdmin webmaster@mysite
    ServerName mysite
@@ -14,7 +14,7 @@ ServerAdmin webmaster@mysite
 
 3) /etc/host : add =>  127.0.0.1    mysite
 
-4) sudo a2dissite 000-default.conf
+4) **sudo a2dissite 000-default.conf** <<OPTIONAL>>
 
 5) sudo a2ensite myfile.conf
 

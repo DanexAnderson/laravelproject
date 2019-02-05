@@ -1,7 +1,9 @@
 
 Components:
 
-1) install Forms: composer require "laravelcollective/html":"^5.4.0"
+1) install Create project and Forms: composer create-project laravel/laravel projectName
+    composer require "laravelcollective/html":"^5.4.0";
+
 2) Add to /config/app.php: providers => Collective\Html\HtmlServiceProvider::class,
 3) Add to /config/app.php: Aliases =>
             'Form' => Collective\Html\FormFacade::class,
@@ -12,10 +14,13 @@ Components:
 6) Add JQeury Add before </body> of app.blade.php =>
                 <script src="{{asset('js/app.js')}}" type="text/javascript"></script>
 7) setup database in .env
+7A) Add to /Provider/AppServiceProvider.php => "use  illuminate\Support\Facades\Schema;"
+    Add to Functon boot(){ Schema::defaultStringLenght(191);}
 8) Create controller or model : php artisan make:controller name ; php artisan make:model name -m
 9) Create database Tables: php artisan migrate
 10) Create a provider:  php artisan make:provider FormServiceProvider
+    Add to /config/app.php: providers => App\Providers\FormServiceProvider::class,
 11) php artisan tinker : $var = new namespace/ModelClassName (); $var->fieldname='mydata';
         $var->save();  <Populate database Table>
-12)
+12) For Authentication: php artisan make:auth
 

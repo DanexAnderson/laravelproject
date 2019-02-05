@@ -3,6 +3,9 @@
 @section('content')
 
 
+
+<h4 class="col-lg-9 col-md-12 ">
+
 {!! Form::open(['action' => ['TodosController@update', $todo->id], 'method' => 'POST']) !!}
 
 {{ Form::bsText('text', $todo->text)}}
@@ -18,13 +21,15 @@
 {{ Form::bsSubmit('Submit')}}
 
 {!! Form::close() !!}
+
+</h4>
 @endsection
 
 @section('sidebar')
 
 @parent
 
-<a class='btn btn-default text-primary' href='/todo'><h2><< Back </h2></a>
+<a class='btn btn-default text-primary' href='/todo'><h3><< Back </h3></a>
 
 
       <br/><br/>

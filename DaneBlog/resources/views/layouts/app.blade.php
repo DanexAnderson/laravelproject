@@ -1,52 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-<meta charset="utf-8">
-    <title> Bloggers</title>
-    <link rel="stylesheet" href="/css/app.css">
-<!--<link href="{{asset('css/app.css')}}" type="text/css" rel="stylesheet">-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Fonts -->
+    <!--<link rel="dns-prefetch" href="//fonts.gstatic.com">-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">-->
+
+    <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-        <!------- Navbar page --------->
+    <div id="app">
+           <!------- Navbar page --------->
     @include('inc.navbar')
-    <div class="container">
 
-        @if(Request::is('/'))
-        @include('inc.showcase')
-        @endif
 
-<div class='row'>
 
-    <div class ="col-md-4 col-lg-4">
-@include('inc.sidebar')
+            @if(Request::is('/'))
+            @include('inc.showcase')
+            @endif
 
+            <!------ Page Content Body ------->
+    <main class='row'>
+
+        <div class =" col-md-12 col-lg-3">
+    @include('inc.sidebar')
+
+        </div>
+
+
+        <div class="container col-md-12 col-lg-8 py-0">
+
+                @include('inc.messages')
+            @yield('content')
 
     </div>
 
-    <div class ="col-md-8 col-lg-8">
-@include('inc.messages')
-        <br/>
-        @yield('content')
+    </main>
 
 
-
-    </div>
-
-</div>
-
-
-
-
-
-
-</div>
 
 <footer id ="footer" class="text-center">
-    <p> copyright 2019 &copy; DaneBlog</p>
+    <p> copyright 2019 &copy; Dane Jason Anderson</p>
 </footer>
 
-<script src="/js/app.js" type="text/javascript"></script>
-<!--<script src="{{asset('js/app.js')}}" type="text/javascript"></script>-->
-</body>
+</div>
 
+
+    <!-- Scripts -->
+    <script src="/js/app.js" type="text/javascript"></script>
+   <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
+</body>
 </html>

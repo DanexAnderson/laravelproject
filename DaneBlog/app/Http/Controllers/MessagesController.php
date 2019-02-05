@@ -25,13 +25,15 @@ class MessagesController extends Controller
 
         $message->save();
 
-        return redirect('/')->with('success', 'Message Sent');
+        return redirect('messages')->with('success', 'Message Sent');
         //return $request->input('name');
     }
 
     public function getMessages()
     {
-        $messages = Message::all();
+        $messages = Message::orderBy('created_at', 'dec')->get();
+        //$messages = Message::all();
+
 
         return view('messages')->with('messages', $messages);
     }

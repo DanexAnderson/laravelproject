@@ -1,5 +1,5 @@
 @section('sidebar')
-<div class="well">
+<div class="container">
 
     @show
 

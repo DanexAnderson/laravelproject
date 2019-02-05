@@ -26,7 +26,7 @@ Route::get('/about', function () {
 
 */
 
-Route::get('/', 'PagesController@getHome');
+Route::get('/', 'PagesController@getDash');
 
 Route::get('/contact', 'PagesController@getContact');
 
@@ -38,3 +38,9 @@ Route::post('/contact/submit', 'MessagesController@submit');
 
 Route::resource('todo', 'TodosController');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('listing', 'ListingsController');

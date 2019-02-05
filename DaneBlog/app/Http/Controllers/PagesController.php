@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function getHome()
+    public function getDash()
     {
         return view('home');
     }
