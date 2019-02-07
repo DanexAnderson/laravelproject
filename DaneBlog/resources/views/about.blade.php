@@ -34,7 +34,11 @@
 
 @parent
 
+<div class="row col-12 card ml-2">
+        <div class="col col-12 ml-1 card-body"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/aboutpic2.jpg')}}" alt=""></div>
+<h4 class='card-title'> Dane Anderson</h4>
+      </div>
+      <br><br/>
 
-<h4> Dane Anderson</h4>
 
 @endsection

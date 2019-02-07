@@ -69,6 +69,8 @@
     @endif
 
 @else
+<!------------------------------------- Landing Page ---------------------->
+
 <!---------------------- Slide Show ----------------------------->
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="10000">
     <div class="carousel-inner">

@@ -50,6 +50,38 @@
 
     </main>
 
+<footer class='container ' id='midcontent'>
+
+
+    <div class="row col-12">
+        <div class="col col-5 mr-1"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/webapp.png')}}" alt=""></div>
+        <div class="col col-5 ml-1 ml-auto"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/mobileapp.jpeg')}}" alt=""></div>
+      </div>
+      <br>
+      <div class="row spacey col-12">
+        <div class="col col-3 mr-1"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/angular.png')}}" alt=""></div>
+        <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/ionic.png')}}" alt=""></div>
+        <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/laravel.png')}}" alt=""></div>
+
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/mysql.png')}}" alt=""></div>
+        <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/nativescript.png')}}" alt=""></div>
+         <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/meanstack2.png')}}" alt=""></div>
+      </div>
+      <br><br>
+      <div class="row">
+            <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/nodejs.png')}}" alt=""></div>
+            <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/php.png')}}" alt=""></div>
+
+        <div class=""><img class="" src="{{ asset('storage/WorkPlace/')}}" alt=""></div>
+
+      </div>
+      <br>
+
+
+</footer>
 
 
 <footer id ="footer" class="text-center">
