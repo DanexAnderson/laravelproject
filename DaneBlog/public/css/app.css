@@ -37,7 +37,17 @@ a:hover {
 
 .table-striped > tbody > tr:nth-child(2n+1) > td,
 .table-striped > tbody > tr:nth-child(2n+1) > th {
-  background-color: #d6e9ff;
+  background-color: #e7f2ff;
+}
+
+.table-striped > tbody > tr:nth-child(even) > td,
+.table-striped > tbody > tr:nth-child(even) > th {
+  background-color: #fcfdf5;
+}
+
+.jumbotron,
+.lightBlue {
+  background-color: #d6e9ff !important;
 }
 
 /*

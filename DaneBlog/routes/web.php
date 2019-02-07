@@ -44,3 +44,19 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('listing', 'ListingsController');
+
+Route::get('/albums', 'AlbumsController@index');
+
+Route::get('/albums/create', 'AlbumsController@create');
+
+Route::post('/albums/store', 'AlbumsController@store');
+
+Route::get('/albums/show', 'AlbumsController@show');
+
+Route::get('/albums/showall', 'AlbumsController@showAll');
+
+Route::get('/albums/{id}', 'AlbumsController@showone');
+
+Route::get('/photos/create/{id}', 'PhotosController@create');
+
+Route::resource('photos', 'PhotosController');

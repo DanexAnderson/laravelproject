@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Album;
+use App\Photo;
 
-use App\Todo;
-
-class TodosController extends Controller
+class PhotosController extends Controller
 {
+
 
     public function __construct()
     {
@@ -21,10 +22,7 @@ class TodosController extends Controller
      */
     public function index()
     {
-        $todos = Todo::orderBy('created_at', 'dec')->get();
-       // $todos = Todo::all();
-        return view('todos.index')->with('todos', $todos);
-
+        //
     }
 
     /**
@@ -32,9 +30,9 @@ class TodosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($album_id)
     {
-        return view('todos.create');
+        return view('photos.create')->with('album_id', $album_id);
     }
 
     /**
@@ -45,23 +43,45 @@ class TodosController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'text' => 'required',
-            'body' => 'required',
-            'due' => 'required'
+        $this->validate($request,[
+
+            'title'=>'required',
+            'description' => 'required',
+            'photo' => 'image|max:1999'
         ]);
 
-            $todo = new Todo;
-            $todo->text = $request->input('text');
-            $todo->body = $request->input('body');
-            $todo->due = $request->input('due');
+        // Get File Name with Extension (filename + jpg)
+        $filenameWithExt = $request->file('photo')->getClientOriginalName();
 
-            $todo->user_id = auth()->user()->id;
+        // Get only file Name
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME );
 
-            $todo->save();
+        // Get Extension only (jpg)
+        $ext = pathinfo($filenameWithExt, PATHINFO_EXTENSION);
+        //$extension = $request->file('cover_image')->getClientOriginalExtension();
 
-            return redirect('todo')->with('success', 'Todo Created');
 
+        // Create new file name
+
+        $filenameToStore = $filename.'_'.time().rand(10,99).'.'.$ext;
+
+        // Upload Image
+
+        $path = $request->file('photo')->storeAs('public/photos/'.$request->input('album_id'), $filenameToStore);
+
+        //create Album
+
+        $photo = new Photo;
+
+        $photo->title = $request->input('title');
+        $photo->description = $request->input('description');
+        $photo->album_id = $request->input('album_id');
+        $photo->size = $request->file('photo')->getClientSize();
+        $photo->photo = $filenameToStore;
+
+        $photo->save();
+
+        return redirect('/albums/'.$request->input('album_id'))->with('success', 'Photo Uploaded');
     }
 
     /**
@@ -72,8 +92,7 @@ class TodosController extends Controller
      */
     public function show($id)
     {
-        $todo = Todo::find($id);
-        return view('todos.show')->with('todo',$todo);
+
     }
 
     /**
@@ -84,8 +103,7 @@ class TodosController extends Controller
      */
     public function edit($id)
     {
-        $todo = Todo::find($id);
-        return view('todos.edit')->with('todo',$todo);
+        //
     }
 
     /**
@@ -97,16 +115,7 @@ class TodosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $todo = Todo::find($id);
-        $todo->text = $request->input('text');
-            $todo->body = $request->input('body');
-            $todo->due = $request->input('due');
-
-            $todo->user_id = auth()->user()->id;
-
-            $todo->save();
-
-            return redirect('todo')->with('success', 'Todo Updated');
+        //
     }
 
     /**
@@ -117,8 +126,6 @@ class TodosController extends Controller
      */
     public function destroy($id)
     {
-        $todo = Todo::find($id);
-        $todo->delete();
-        return redirect('todo')->with('success','Todo Deleted');
+        //
     }
 }

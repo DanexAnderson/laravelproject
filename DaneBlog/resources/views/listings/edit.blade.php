@@ -49,6 +49,6 @@
 
 @parent
 
-<a class='btn btn-default text-primary' href='/home'><h3><< Back </h3></a>
+<a class='btn btn-default text-primary' href='{{url()->previous()}}'><img width='50px' src='{{asset('storage/icons/backbutton.png')}}'/></a>
 
 @endsection

@@ -9,41 +9,94 @@
 
 
     <span class='float-right '> <a href='/listing/create' class='btn btn-outline-success btn-sm'><b>Create Client</b></a></span>
-    <br/>.
+    <br/>
 
     @if(count($listings))
 
     <div class="col-lg-9 col-md-12">
-    <table class='table table-borderless table-striped  '>
+    <table class='table table-borderless table-striped '>
         <tr>
-            <th table-primary><h3><b>Companies</b></h3></th>
-
-            <th></th>
-            <th></th>
+            <th ><h3><b class='text-info'>Companies</b></h3></th>
 
         </tr>
         @foreach ($listings as $listing)
         <tr>
-            <td >{{$listing->name}}</td>
+            <td >
+                <ul class='list-inline '>
+                    <li class='list-inline-item'>
+                    <a href={{'#a'.$listing->id}} class="text-dark "
+                         data-toggle="collapse"><h5><b>{{$listing->name}}</b></h5></a>
+                    </li>
 
-           <td><a href='/listing/{{$listing->id}}/edit' class='btn btn-outline-secondary float-right btn-sm'>Edit</a></td>
-
-            <td>
-                    {!! Form::open(['action' => ['ListingsController@destroy', $listing->id],
-                    'method' => 'POST', 'class' => 'float-right', 'onsubmit' => 'return confirm("Are you sure ?")']) !!}
+                    <li class='list-inline-item mr-auto float-right'>
+                      {!! Form::open(['action' => ['ListingsController@destroy', $listing->id],
+                     'method' => 'POST', 'class' => 'float-right', 'onsubmit' => 'return confirm("Are you sure ?")']) !!}
 
                     {{ Form::hidden('_method','DELETE')}}
 
                      {{ Form::bsSubmit('Delete', ['class' => 'btn btn-outline-danger btn-sm'])}}
 
                     {!! Form::close() !!}
+                    </li>
+
+                    <li class='list-inline-item mr-2 float-right'>
+                            <a href='/listing/{{$listing->id}}/edit'
+                            class='btn btn-outline-secondary float-right btn-sm'>Edit</a>
+                        </li>
+
+
+                </ul>
+
+                    <div id={{'a'.$listing->id}} class="collapse">
+
+                        <ul class="list-group">
+                        <li class="list-group-item"><b class='pr-5'>Email:</b> {{$listing->email}}</li>
+                        <li class="list-group-item"><b class='pr-4'>website:</b> {{$listing->website}}</li>
+                        <li class="list-group-item"><b class='pr-4'>Address:</b> {{$listing->address}}</li>
+                        <li class="list-group-item"><b class='pr-5'>Phone:</b> {{$listing->phone}}</li>
+                        <li class="list-group-item"><b class='pr-5'>Bio:</b> {{$listing->bio}}</li>
+                        </ul>
+
+                    </div>
+
 
             </td>
+
 
         </tr>
         @endforeach
     </table>
     @endif
+
+@else
+<!---------------------- Slide Show ----------------------------->
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="10000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+      <img class="d-block w-100" src="{{ asset('storage/WorkPlace/gif6.gif')}}" alt="Gif 6" >
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="{{ asset('storage/WorkPlace/office2.jpg')}}" alt="office Toon Two">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="{{ asset('storage/WorkPlace/gif5.gif')}}" alt="Gif 5">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100"src="{{ asset('storage/WorkPlace/office1.jpg')}}" alt="office Toon one" >
+      </div>
+
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+<!---------------------------------- End Slide ------------------------------------->
+
 </div>
 
 </div>
@@ -66,10 +119,8 @@
         <div class="list-group list-group-flush "><b >
           <a href="/messages" class=" list-group-item list-group-item-action bg-light">View Post Messages</a>
           <a href="/todo" class="list-group-item list-group-item-action bg-light">View Todo List</a>
-          <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-          <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-          <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-          <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+          <a href="/albums/showall" class="list-group-item list-group-item-action bg-light">Photo Gallary</a>
+
         </b></div>
       </div>
 @endsection

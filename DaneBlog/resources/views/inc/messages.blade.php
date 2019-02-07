@@ -9,7 +9,8 @@
 
     @if(session('success'))
 
-    <div class="alert alert-success">
+    <div class="alert alert-success alert-dismissible col-lg-6 col-md-8">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
         {{session('success')}}
     </div>
     @endif

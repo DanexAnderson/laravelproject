@@ -3,7 +3,6 @@
 @section('content')
 
 <div class="col-lg-9 col-md-12 ">
-<h1>Post</h1>
 
 {!! Form::open(['url' => 'contact/submit']) !!}
 

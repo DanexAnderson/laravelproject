@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header lightBlue"><h4>{{ __('Register') }}</h4></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -79,9 +79,9 @@
 @section('sidebar')
 
 @if(Auth::user())
-<a class='btn btn-default text-primary' href='/home'><h3><< Back </h3></a>
+<a class='btn btn-default text-primary' href='{{url()->previous()}}e'><img width='50px' src='{{asset('storage/icons/backbutton.png')}}'/></a>
 @else
-<a class='btn btn-default text-primary' href='/'><h3><< Back </h3></a>
+<a class='btn btn-default text-primary' href='{{url()->previous()}}'><img width='50px' src='{{asset('storage/icons/backbutton.png')}}'/></a>
 @endif
 
 

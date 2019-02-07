@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\listing;
+use App\Album;
 
 class User extends Authenticatable
 {
@@ -34,5 +35,11 @@ class User extends Authenticatable
     public function listings(){
 
         return $this->hasMany('App\listing');
+    }
+
+
+    public function Albums(){
+
+        return $this->hasMany('App\Album');
     }
 }

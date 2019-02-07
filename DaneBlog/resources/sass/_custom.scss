@@ -38,9 +38,19 @@ a,a:hover {
 
 }
 
-.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-    background-color: rgb(214, 233, 255);
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th , {
+    background-color: rgb(231, 242, 255);
  }
+
+.table-striped > tbody > tr:nth-child(even) > td, .table-striped > tbody > tr:nth-child(even) > th , {
+    background-color: rgb(252, 253, 245);
+ }
+
+
+ .jumbotron, .lightBlue {
+    // background-color:transparent !important;
+    background-color: rgb(214, 233, 255) !important;
+}
 
 /*
 

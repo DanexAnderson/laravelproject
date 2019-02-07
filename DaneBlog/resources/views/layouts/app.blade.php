@@ -9,6 +9,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+<link rel="icon" type="image/gif" href="{{asset('storage/icons/logo.png')}}" />
+
     <!-- Fonts -->
     <!--<link rel="dns-prefetch" href="//fonts.gstatic.com">-->
     <!--<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">-->
@@ -31,14 +33,16 @@
             <!------ Page Content Body ------->
     <main class='row'>
 
+        <!----------------------- SideBar ---------------->
         <div class =" col-md-12 col-lg-3">
     @include('inc.sidebar')
 
         </div>
 
-
+        <!----------------------- Content Body ----------->
         <div class="container col-md-12 col-lg-8 py-0">
 
+                <!----------- Error | Success Messages --------->
                 @include('inc.messages')
             @yield('content')
 
@@ -56,7 +60,7 @@
 
 
     <!-- Scripts -->
-    <script src="/js/app.js" type="text/javascript"></script>
-   <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
+   <!-- <script src="/js/app.js" type="text/javascript"></script> -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>
