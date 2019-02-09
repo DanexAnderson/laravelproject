@@ -29,7 +29,7 @@
 
 @parent
 
-<a class='btn btn-default text-primary' href='{{url()->previous()}}'><h3><img width='50px' src='{{asset('storage/icons/backbutton.png')}}'/></a>
+<a class='btn btn-default text-primary' onclick="window.history.back();"><h3><img width='50px' src='{{asset($photourl.'/icons/backbutton.png')}}'/></a>
 
 
       <br/><br/>

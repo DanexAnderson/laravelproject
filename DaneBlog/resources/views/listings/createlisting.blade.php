@@ -47,6 +47,6 @@
 
 @parent
 
-<a class='btn btn-default text-primary' href='/home'><img width='50px' src='{{asset('storage/icons/backbutton.png')}}'/></a>
+<a class='btn btn-default text-primary' href='/home'><img width='50px' src='{{asset($photourl.'/icons/backbutton.png')}}'/></a>
 
 @endsection

@@ -50,6 +50,9 @@ class PhotosController extends Controller
             'photo' => 'image|max:1999'
         ]);
 
+        if ($request->file('photo') == null){
+            return redirect('/albums/'.$request->input('album_id'))->with('failupload', 'No File was Uploaded, incorrect file size or Format');}
+
         // Get File Name with Extension (filename + jpg)
         $filenameWithExt = $request->file('photo')->getClientOriginalName();
 
@@ -67,7 +70,7 @@ class PhotosController extends Controller
 
         // Upload Image
 
-        $path = $request->file('photo')->storeAs('public/photos/'.$request->input('album_id'), $filenameToStore);
+        $path = $request->file('photo')->storeAs('images/photos/'.$request->input('album_id'), $filenameToStore,'uploads');
 
         //create Album
 

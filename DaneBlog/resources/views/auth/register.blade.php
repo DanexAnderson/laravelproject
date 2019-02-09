@@ -79,9 +79,9 @@
 @section('sidebar')
 
 @if(Auth::user())
-<a class='btn btn-default text-primary' href='{{url()->previous()}}e'><img width='50px' src='{{asset('storage/icons/backbutton.png')}}'/></a>
+<a class='btn btn-default text-primary' onclick="window.history.back();"><img width='50px' src='{{asset($photourl.'/icons/backbutton.png')}}'/></a>
 @else
-<a class='btn btn-default text-primary' href='{{url()->previous()}}'><img width='50px' src='{{asset('storage/icons/backbutton.png')}}'/></a>
+<a class='btn btn-default text-primary' onclick="window.history.back();"><img width='50px' src='{{asset($photourl.'/icons/backbutton.png')}}'/></a>
 @endif
 
 

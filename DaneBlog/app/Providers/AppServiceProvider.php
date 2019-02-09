@@ -15,6 +15,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+        //global variable , share photo Url with all views
+        View()->share('photourl', 'images');
+
+        // global variable , share save photo url with all controllers
+        config(['photourl' => 'images']);
     }
 
     /**

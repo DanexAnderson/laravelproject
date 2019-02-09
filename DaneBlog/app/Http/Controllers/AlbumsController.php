@@ -34,10 +34,15 @@ class AlbumsController extends Controller
 
             'name'=>'required',
             'description' => 'required',
+            'cover_image' => 'required',
             'cover_image' => 'image|max:1999'
         ]);
 
         // Get File Name with Extension (filename + jpg)
+
+            if ($request->file('cover_image') == null){
+            return redirect('/albums')->with('failupload', 'No File was Uploaded, incorrect file size or Format');}
+
         $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
 
         // Get only file Name
@@ -54,7 +59,14 @@ class AlbumsController extends Controller
 
         // Upload Image
 
-        $path = $request->file('cover_image')->storeAs('public/album_covers', $filenameToStore);
+
+         $path = $request->file('cover_image')->storeAs('images/album_covers', $filenameToStore, 'uploads');
+
+         // $photourl = config('photourl');
+
+        // $path = $request->file('cover_image')->storeAs(asset($photourl.'/album_covers/'), $filenameToStore, "uploads");
+
+         //  Storage::disk('uploads')->put(asset($photourl.'/album_covers/').$filenameToStore, $request->file('cover_image') );
 
         //create Album
 
@@ -66,6 +78,8 @@ class AlbumsController extends Controller
         $album->cover_image = $filenameToStore;
 
         $album->save();
+
+
 
         return redirect('/albums')->with('success', 'Album Created');
     }

@@ -7,11 +7,17 @@
   position: relative;
   color: #fff;
   background: #333;
+  width: 103% !important;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 98%;
 }
 
 #midcontent,
 .spacey {
-  margin-top: 30%;
+  margin-top: 20%;
   padding: 20px;
   clear: both;
   position: relative;

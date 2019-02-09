@@ -9,7 +9,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-<link rel="icon" type="image/gif" href="{{asset('storage/icons/logo.png')}}" />
+<link rel="icon" type="image/gif" href="{{asset($photourl.'/icons/logo.png')}}" />
 
     <!-- Fonts -->
     <!--<link rel="dns-prefetch" href="//fonts.gstatic.com">-->
@@ -34,8 +34,9 @@
     <main class='row'>
 
         <!----------------------- SideBar ---------------->
-        <div class =" col-md-12 col-lg-3">
+        <div class ="container col-md-12 col-lg-3">
     @include('inc.sidebar')
+
 
         </div>
 
@@ -50,43 +51,43 @@
 
     </main>
 
+    @if(Request::is('/') || Request::is('home') || Request::is('login')
+     || Request::is('register') || Request::is('about') )
 <footer class='container ' id='midcontent'>
 
 
     <div class="row col-12">
-        <div class="col col-5 mr-1"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/webapp.png')}}" alt=""></div>
-        <div class="col col-5 ml-1 ml-auto"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/mobileapp.jpeg')}}" alt=""></div>
+        <div class="col col-5 mr-1"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/webapp.png')}}" alt=""></div>
+        <div class="col col-5 ml-1 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/mobileapp.jpeg')}}" alt=""></div>
       </div>
       <br>
       <div class="row spacey col-12">
-        <div class="col col-3 mr-1"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/angular.png')}}" alt=""></div>
-        <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/ionic.png')}}" alt=""></div>
-        <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/laravel.png')}}" alt=""></div>
+        <div class="col col-3 mr-1"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/angular.png')}}" alt=""></div>
+        <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/ionic.png')}}" alt=""></div>
+        <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/laravel.png')}}" alt=""></div>
 
       </div>
       <br><br>
       <div class="row">
-        <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/mysql.png')}}" alt=""></div>
-        <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/nativescript.png')}}" alt=""></div>
-         <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/meanstack2.png')}}" alt=""></div>
+        <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/mysql.png')}}" alt=""></div>
+        <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/nativescript.png')}}" alt=""></div>
+         <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/meanstack2.png')}}" alt=""></div>
       </div>
       <br><br>
       <div class="row">
-            <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/nodejs.png')}}" alt=""></div>
-            <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset('storage/WorkPlace/php.png')}}" alt=""></div>
+            <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/nodejs.png')}}" alt=""></div>
+            <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/php.png')}}" alt=""></div>
 
-        <div class=""><img class="" src="{{ asset('storage/WorkPlace/')}}" alt=""></div>
+        <div class=""><img class="" src="{{ asset($photourl.'/WorkPlace/')}}" alt=""></div>
 
       </div>
       <br>
 
 
 </footer>
+@endif
 
 
-<footer id ="footer" class="text-center">
-    <p> copyright 2019 &copy; Dane Jason Anderson</p>
-</footer>
 
 </div>
 
@@ -95,4 +96,9 @@
    <!-- <script src="/js/app.js" type="text/javascript"></script> -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
+
+<footer id ="footer" class=" text-center">
+    <p> copyright 2019 &copy; Dane Jason Anderson</p>
+</footer>
+
 </html>

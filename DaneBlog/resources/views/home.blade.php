@@ -75,16 +75,16 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="10000">
     <div class="carousel-inner">
       <div class="carousel-item active">
-      <img class="d-block w-100" src="{{ asset('storage/WorkPlace/gif6.gif')}}" alt="Gif 6" >
+      <img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/gif6.gif')}}" alt="Gif 6" >
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="{{ asset('storage/WorkPlace/office2.jpg')}}" alt="office Toon Two">
+        <img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/office2.jpg')}}" alt="office Toon Two">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="{{ asset('storage/WorkPlace/gif5.gif')}}" alt="Gif 5">
+        <img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/gif5.gif')}}" alt="Gif 5">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100"src="{{ asset('storage/WorkPlace/office1.jpg')}}" alt="office Toon one" >
+        <img class="d-block w-100"src="{{ asset($photourl.'/WorkPlace/office1.jpg')}}" alt="office Toon one" >
       </div>
 
     </div>

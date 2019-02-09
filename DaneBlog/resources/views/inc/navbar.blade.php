@@ -4,7 +4,7 @@
             <!--<div class="container">-->
 
                 <a class="navbar-brand text-white leftmargin font-weight-bold py-0"
-                href="{{ url('/') }}"><img src='{{asset('storage/icons/logo2.png')}}' height="41px"/>
+                href="{{ url('/') }}"><img src='{{asset($photourl.'/icons/logo2.png')}}' height="41px"/>
                     {{ config('app.name', 'WorkPlace') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

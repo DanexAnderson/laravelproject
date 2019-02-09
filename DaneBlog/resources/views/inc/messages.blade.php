@@ -14,3 +14,11 @@
         {{session('success')}}
     </div>
     @endif
+
+    @if(session('failupload'))
+
+    <div class="alert alert-danger alert-dismissible col-lg-6 col-md-8">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{session('failupload')}}
+    </div>
+    @endif
