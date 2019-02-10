@@ -34,14 +34,14 @@
     <main class='row'>
 
         <!----------------------- SideBar ---------------->
-        <div class =" col-md-12 col-lg-3 ml-5 py-0">
+        <div class =" col-md-12 col-lg-3 ml-auto py-0">
     @include('inc.sidebar')
 
 
         </div>
 
         <!----------------------- Content Body ----------->
-        <div class="container col-md-12 col-lg-8 py-0">
+        <div class="container col-md-12 col-lg-8 py-0 ml-auto">
 
                 <!----------- Error | Success Messages --------->
                 @include('inc.messages')
@@ -53,30 +53,32 @@
 
     @if(Request::is('/') || Request::is('home') || Request::is('login')
      || Request::is('register') || Request::is('about') )
-<footer class='container ' id='midcontent'>
+<footer class='container-fluid ' id='midcontent'>
 
-
+<!------------------------------ Laptop web and Mobile phones Pics --------------------->
     <div class="row col-12">
-        <div class="col col-5 mr-1"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/webapp.png')}}" alt=""></div>
-        <div class="col col-5 ml-1 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/mobileapp.jpeg')}}" alt=""></div>
+        <div class="col-lg-5 py-4  ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/webapp.png')}}" alt=""></div>
+        <div class="col-lg-5 py-4  ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/mobileapp.jpeg')}}" alt=""></div>
       </div>
+
+      <!-------------------------------- Development Frameworks Logos ----------------------->
       <br>
       <div class="row spacey col-12">
-        <div class="col col-3 mr-1"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/angular.png')}}" alt=""></div>
-        <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/ionic.png')}}" alt=""></div>
-        <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/laravel.png')}}" alt=""></div>
+        <div class="col-6 col-lg-3  ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/angular.png')}}" alt=""></div>
+        <div class="col-6 col-lg-3  ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/ionic.png')}}" alt=""></div>
+        <div class="col-6 col-lg-3   ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/laravel.png')}}" alt=""></div>
 
       </div>
       <br><br>
       <div class="row">
-        <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/mysql.png')}}" alt=""></div>
-        <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/nativescript.png')}}" alt=""></div>
-         <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/meanstack2.png')}}" alt=""></div>
+        <div class="col-6 col-lg-3  ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/mysql.png')}}" alt=""></div>
+        <div class="col-6 col-lg-3 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/nativescript.png')}}" alt=""></div>
+         <div class="col-6 col-lg-3  ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/meanstack2.png')}}" alt=""></div>
       </div>
       <br><br>
       <div class="row">
-            <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/nodejs.png')}}" alt=""></div>
-            <div class="col col-3 mr-1 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/php.png')}}" alt=""></div>
+            <div class="col-6 col-lg-3 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/nodejs.png')}}" alt=""></div>
+            <div class="col-6 col-lg-3 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/php.png')}}" alt=""></div>
 
         <div class=""><img class="" src="{{ asset($photourl.'/WorkPlace/')}}" alt=""></div>
 

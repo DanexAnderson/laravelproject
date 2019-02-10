@@ -12,7 +12,7 @@ class AlbumsController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index','showAll','showone']]);
+        $this->middleware('auth', ['except' => ['index','showAll']]);
     }
 
     public function index(){

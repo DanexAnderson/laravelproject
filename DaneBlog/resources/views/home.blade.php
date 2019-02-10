@@ -22,13 +22,18 @@
         @foreach ($listings as $listing)
         <tr>
             <td >
-                <ul class='list-inline '>
-                    <li class='list-inline-item'>
+                <ul class='list-inline'>
+
+                    <!---------------- Client Names -------------->
+
+                    <li class='list-inline-item col-7 '>
                     <a href={{'#a'.$listing->id}} class="text-dark "
                          data-toggle="collapse"><h5><b>{{$listing->name}}</b></h5></a>
                     </li>
 
-                    <li class='list-inline-item mr-auto float-right'>
+                    <!------------------ Delete Button ----------------->
+
+                    <li class='list-inline-item mr-auto float-right '>
                       {!! Form::open(['action' => ['ListingsController@destroy', $listing->id],
                      'method' => 'POST', 'class' => 'float-right', 'onsubmit' => 'return confirm("Are you sure ?")']) !!}
 
@@ -39,13 +44,17 @@
                     {!! Form::close() !!}
                     </li>
 
-                    <li class='list-inline-item mr-2 float-right'>
+                    <!-------------------------- Edit Button ------------------>
+
+                    <li class='list-inline-item mr-2 float-right '>
                             <a href='/listing/{{$listing->id}}/edit'
                             class='btn btn-outline-secondary float-right btn-sm'>Edit</a>
                         </li>
 
 
                 </ul>
+
+                <!-------------------------- Arcadion ------------------------>
 
                     <div id={{'a'.$listing->id}} class="collapse">
 
@@ -111,12 +120,12 @@
 <br/><br/>
 @parent
 
-
+<div class='container'>
 <h3><b>Features</b></h3><br/>
 
 <!--<p> <a class='btn btn-primary' href="/messages"> View Post </a></p>-->
 
-<div class="container border-right " id="sidebar-wrapper">
+<div class=" border-right " id="sidebar-wrapper">
         <div class="sidebar-heading "></div>
         <div class="list-group list-group-flush "><b >
           <a href="/messages" class=" list-group-item list-group-item-action bg-light">View Post Messages</a>
@@ -125,4 +134,5 @@
 
         </b></div>
       </div>
+</div>
 @endsection
