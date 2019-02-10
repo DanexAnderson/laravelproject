@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\User;
 use App\Photo;
@@ -34,14 +34,10 @@ class AlbumsController extends Controller
 
             'name'=>'required',
             'description' => 'required',
-            'cover_image' => 'required',
-            'cover_image' => 'image|max:1999'
+            'cover_image' => 'required|image|max:9999'
         ]);
 
         // Get File Name with Extension (filename + jpg)
-
-            if ($request->file('cover_image') == null){
-            return redirect('/albums')->with('failupload', 'No File was Uploaded, incorrect file size or Format');}
 
         $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
 
@@ -95,10 +91,13 @@ class AlbumsController extends Controller
         $user_id = auth()->user()->id;
 
        // $user = User::find($user_id);
+        //$user = User::with('Albums')->find($user_id);
 
-       $user = User::with('Albums')->find($user_id);
+       // $albums = Album::where('user_id', $user_id)->with('Photos')->get();
 
-        return view('albums/showuser')->with('user', $user);
+       $albums = Album::with('Photos')->where('user_id', $user_id)->get();
+
+        return view('albums/showuser')->with('albums', $albums);
 
     }
 
@@ -106,13 +105,36 @@ class AlbumsController extends Controller
     {
 
        // return 'ALL Photos';
-        $photos = Photo::orderBy('created_at', 'dec')->get();
+       // $photos = Photo::orderBy('created_at', 'dec')->get();
 
-       // $albums = Album::with('Photos')->get();
+        $albums = Album::with('Photos')->get();
 
-       //return view('albums.show')->with('albums', $albums);
-       return view('albums/show')->with('photos', $photos);
+       //$albums = Album::all();
 
+       return view('albums.show')->with('albums', $albums);
+       //return view('albums/show')->with('photos', $photos);
+
+    }
+
+    public function destroy($id)
+    {
+        $album = Album::find($id);
+
+
+        // if(rmdir(public_path().'/images/photos/'.$album->id) && unlink(public_path().'/images/album_covers/'.$album->cover_image) )
+        $dirname = public_path().'/images/photos/'.$album->id;
+
+        // Remove File director without additional director         // remove file
+       if( array_map('unlink', glob("$dirname/*.*")) && unlink(public_path().'/images/album_covers/'.$album->cover_image) )
+        {
+            rmdir($dirname);
+            $album = Album::with('Photos')->find($id);
+            $album->photos()->delete();
+            $album->delete();
+
+            return redirect('/albums')->with('success', 'Photo Successfully Deleted');
+
+        }
     }
 
 

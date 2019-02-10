@@ -34,7 +34,7 @@
     <main class='row'>
 
         <!----------------------- SideBar ---------------->
-        <div class ="container col-md-12 col-lg-3">
+        <div class =" col-md-12 col-lg-3 ml-5 py-0">
     @include('inc.sidebar')
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Album;
 use App\Photo;
 
@@ -47,11 +48,11 @@ class PhotosController extends Controller
 
             'title'=>'required',
             'description' => 'required',
-            'photo' => 'image|max:1999'
+            'photo' => 'required|image|max:9999'
         ]);
 
-        if ($request->file('photo') == null){
-            return redirect('/albums/'.$request->input('album_id'))->with('failupload', 'No File was Uploaded, incorrect file size or Format');}
+        //if ($request->file('photo') == null){
+         //   return redirect('/albums/'.$request->input('album_id'))->with('failupload', 'No File was Uploaded, incorrect file size or Format');}
 
         // Get File Name with Extension (filename + jpg)
         $filenameWithExt = $request->file('photo')->getClientOriginalName();
@@ -129,6 +130,14 @@ class PhotosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $photo = Photo::find($id);
+
+        if(unlink(public_path().'/images/photos/'.$photo->album_id.'/'.$photo->photo))
+        {
+            $photo->delete();
+
+            return redirect('/albums/'.$photo->album_id)->with('success', 'Photo Successfully Deleted');
+
+        }
     }
 }

@@ -60,3 +60,5 @@ Route::get('/albums/{id}', 'AlbumsController@showone');
 Route::get('/photos/create/{id}', 'PhotosController@create');
 
 Route::resource('photos', 'PhotosController');
+
+Route::delete('/albums/{id}', 'AlbumsController@destroy');

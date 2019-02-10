@@ -1,7 +1,7 @@
 @section('sidebar')
 
 
-<div class="container">
+<div class="">
 
     @show
 

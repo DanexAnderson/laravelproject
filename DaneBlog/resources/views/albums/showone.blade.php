@@ -3,6 +3,7 @@
 @section('content')
 <div class=' '>
 
+<!------------------------ Album Cover Image ------------------------------->
 
         <a class='btn btn-outline-primary' href='/photos/create/{{$albums->id}}'><b>Upload Photo to Album </b></a>
         <hr/><br/>
@@ -23,11 +24,42 @@
 
           @if(count($albums->photos)>0)
               @foreach($albums->photos as $photo)
-              <div class='col-lg-12 col-12 col-sm-8 '>
 
-                      <img class="img-thumbnail d-block w-100"  src="{{asset($photourl.'/photos/')}}/{{$photo->album_id}}/{{$photo->photo}}" alt="{{$photo->title}}">
-<h4>{{$photo->title}}</h4>
-              </div>
+   <!-------------------------------- Delete Button DropDown ------------------------------->
+
+   @if(Auth::user()->id == $albums->user_id)
+   <div class="dropdown ">
+                    <a class="nav-link py-0 btn btn-default position-relative"  id="dropdownMenu2"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   <h1 class='text-danger '><b>...</b></h1>
+                   </a>
+
+
+
+                   <div class="dropdown-menu bg-transparent" aria-labelledby="dropdownMenu2">
+
+                    {!! Form::open(['action'=> ['PhotosController@destroy',$photo->id], 'method' => 'POST' , 'onsubmit' => 'return confirm("Are you sure ?")'])!!}
+
+                    {{Form::hidden('_method','DELETE')}}
+                    {{Form::submit('Delete Photo', ['class' => 'btn btn-default  btn-outline-danger btn-sm btn-block'])}}
+                     <!--<button class="dropdown-item text-danger" type="button">Delete</button>-->
+
+
+                     {!! Form::close()!!}
+                   </div>
+                 </div>
+                 @endif
+
+<!------------------------------------------------- Album Photos -------------------------------->
+
+     <div class='col-lg-12 col-12 col-sm-8 '>
+
+        <img class="img-thumbnail d-block w-100 h-75"
+            src="{{asset($photourl.'/photos/')}}/{{$photo->album_id}}/{{$photo->photo}}" alt="{{$photo->title}}">
+
+    <h4>{{$photo->title}}</h4>
+    </div>
+
 
               @endforeach
               @endif

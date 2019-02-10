@@ -25,7 +25,7 @@
 
 
 @if(Auth::user())
-    <a class='btn btn-default text-primary' onclick="window.history.back();" >
+    <a class='btn btn-default text-primary ' onclick="window.history.back();" >
 
         <img width='50px' src='{{asset($photourl.'/icons/backbutton.png')}}'/></a>
 @else

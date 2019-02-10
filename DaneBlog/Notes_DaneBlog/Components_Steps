@@ -66,3 +66,22 @@ Config/filesystem    backup
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
         ],
+
+
+
+        <div id="albums">
+                <div class="row text-center ">
+
+                  @if(count($user->albums)>0)
+                      @foreach($user->albums as $album)
+                      <div class='col-lg-4 col-sm-4 col-12  flex-wrap '>
+                              <a href="/albums/{{$album->id}}">
+                                  <img class="img-thumbnail d-block w-100 py-2 h-75" src="{{asset($photourl.'/album_covers/')}}/{{$album->cover_image}}" alt="{{$album->name}}">
+                                </a>
+                               <br>
+                               <h4>{{$album->name}}</h4>
+                      </div>
+                      @endforeach
+                      @endif
+                </div>
+              </div>

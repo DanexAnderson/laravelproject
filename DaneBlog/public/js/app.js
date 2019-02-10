@@ -48118,6 +48118,10 @@ window.onscroll = function () {
   prevScrollpos = currentScrollPos;
 };
 
+$(document).ready(function () {
+  $(this).scrollTop(0);
+});
+
 /***/ }),
 
 /***/ "./resources/sass/app.scss":
