@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
+<div class='container'>
 <h1 class="text-success">Todos</h1><br/>
 
 @if(count($todos) > 0)
@@ -20,16 +20,16 @@
 <br/>
     @endforeach
 @endif
-
+</div>
 @endsection
 
 @section('sidebar')
 
 @parent
 @if(Auth::user())
-<a class='btn btn-default text-primary' onclick="window.history.back();"><h3><img width='50px' src='{{asset($photourl.'/icons/backbutton.png')}}'/> </h3></a>
+<a class='btn btn-default ' onclick="window.history.back();"><h3><img width='50px' src='{{asset($photourl.'/icons/backbutton.png')}}'/> </h3></a>
 @else
-<a class='btn btn-default text-primary' onclick="window.history.back();"><img width='50px' src='{{asset($photourl.'/icons/backbutton.png')}}'/></a>
+<a class='btn btn-default ' onclick="window.history.back();"><img width='50px' src='{{asset($photourl.'/icons/backbutton.png')}}'/></a>
 @endif
 <br/><br/>
 

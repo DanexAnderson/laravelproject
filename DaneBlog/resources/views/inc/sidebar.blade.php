@@ -1,7 +1,7 @@
 @section('sidebar')
 
 
-<div class="">
+<div class="container ml-auto">
 
     @show
 

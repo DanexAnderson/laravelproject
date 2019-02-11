@@ -34,7 +34,7 @@
     <main class='row'>
 
         <!----------------------- SideBar ---------------->
-        <div class =" col-md-12 col-lg-3 ml-auto py-0">
+        <div class =" col-md-12 col-lg-3  py-0">
     @include('inc.sidebar')
 
 
@@ -58,7 +58,7 @@
 <!------------------------------ Laptop web and Mobile phones Pics --------------------->
     <div class="row col-12">
         <div class="col-lg-5 py-4  ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/webapp.png')}}" alt=""></div>
-        <div class="col-lg-5 py-4  ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/mobileapp.jpeg')}}" alt=""></div>
+        <div class="col-lg-5 py-4  ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/mobileapp.png')}}" alt=""></div>
       </div>
 
       <!-------------------------------- Development Frameworks Logos ----------------------->

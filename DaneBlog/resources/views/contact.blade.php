@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-
-<div class="col-lg-9 col-md-12 ">
+<div class=container>
+<div class=" col-lg-9 col-md-12 ">
 
 {!! Form::open(['url' => 'contact/submit']) !!}
 
@@ -29,14 +29,16 @@
 {!! Form::close() !!}
 
 </div>
-
+</div>
 @endsection
 
 <!----- -------------------Side Panel -------------->
 
 @section('sidebar')
 <br/>
+<div class="container">
  @parent
 
 <h3> Add Contact and Message</h3>
+</div>
 @endsection
