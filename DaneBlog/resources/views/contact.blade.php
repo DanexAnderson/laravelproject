@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class=container>
+<div class="container ">
 <div class=" col-lg-9 col-md-12 ">
 
 {!! Form::open(['url' => 'contact/submit']) !!}

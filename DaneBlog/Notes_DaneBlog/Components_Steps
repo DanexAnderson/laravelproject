@@ -26,6 +26,8 @@ Components:
         $var->save();  <Populate database Table>
 12) For Authentication: php artisan make:auth
 13) Enable Storage : php artisan storage:link
+14) For SVG composer require nothingworks/blade-svg;
+    php artisan vendor:publish --provider="BladeSvg\BladeSvgServiceProvider"; config/blade-svg.php
 
 
 1)Left to do: back button as icon ; Landing page web app , iOS , Andriod and Desktop App development image ; List of Skills footer ; about photo.

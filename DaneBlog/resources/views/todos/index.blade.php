@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class='container'>
+<div class='container mb-5 '>
 <h1 class="text-success">Todos</h1><br/>
 
 @if(count($todos) > 0)
@@ -21,6 +21,7 @@
     @endforeach
 @endif
 </div>
+<br><br><br>
 @endsection
 
 @section('sidebar')

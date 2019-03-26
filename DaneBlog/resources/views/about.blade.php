@@ -9,10 +9,10 @@
     Applications development.
 </p>
 
-<p> His Frameworks of choice for web are: <b>Angular</b> for Progressive
-    Web App development and <b>Laravel</b> for PHP, multi-page websites. Framework of choice for mobile
-    development are: <b>Ionic ^4</b> for hybrid web and mobile Apps, and <b>NativeScript</b> for mobile only iOS
-    and Android Apps. Other Framework of Knowledge are Vuejs and Xamarin. He is able to program in any Framework or language required.
+<p> His Frameworks of choice for Web Design are: <b>Angular</b> for Progressive
+    Web App development and <b>Laravel</b> for PHP multi-page websites. Framework of choice for mobile
+    development are: <b>Ionic ^4</b> for hybrid web and mobile Apps, and <b>Flutter</b> for mobile only iOS
+    and Android Apps. Other Framework of Knowledge are Vuejs and Xamarin .NET. He is able to program in any Framework or language required.
 
 </p>
 <p>

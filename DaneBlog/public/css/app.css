@@ -1,12 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
-#footer {
-  margin-top: 70%;
-  padding: 20px;
-  clear: both;
-  position: relative;
-  color: #fff;
-  background: #333;
+/* #footer{
+    margin-top: 70%;
+    padding: 20px;
+    clear: both;
+    position: relative;
+    color: #fff;
+    background:#333;
+    width: 103% !important;
+} */
+
+#footer,
+#footer2 {
   width: 103% !important;
 }
 
@@ -19,7 +24,7 @@ body {
 .spacey {
   margin-top: 20%;
   padding: 20px;
-  clear: both;
+  /*  clear: both; */
   position: relative;
 }
 
@@ -67,6 +72,12 @@ a:hover {
 /*
 
 */
+
+.icon {
+  width: 40px;
+  height: 40px;
+  color: white;
+}
 
 /*!
  * Bootstrap v4.2.1 (https://getbootstrap.com/)

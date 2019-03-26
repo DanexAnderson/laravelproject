@@ -1,4 +1,4 @@
-#footer{
+/* #footer{
     margin-top: 70%;
     padding: 20px;
     clear: both;
@@ -6,6 +6,11 @@
     color: #fff;
     background:#333;
     width: 103% !important;
+} */
+
+#footer, #footer2{
+    width: 103% !important;
+
 }
 
 body {
@@ -17,7 +22,7 @@ body {
 #midcontent, .spacey{
     margin-top: 20%;
     padding: 20px;
-    clear: both;
+   /*  clear: both; */
     position: relative;
 
 
@@ -54,11 +59,11 @@ a,a:hover {
 
 }
 
-.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th , {
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
     background-color: rgb(231, 242, 255);
  }
 
-.table-striped > tbody > tr:nth-child(even) > td, .table-striped > tbody > tr:nth-child(even) > th , {
+.table-striped > tbody > tr:nth-child(even) > td, .table-striped > tbody > tr:nth-child(even) > th  {
     background-color: rgb(252, 253, 245);
  }
 
@@ -71,3 +76,7 @@ a,a:hover {
 /*
 
 */
+.icon {
+
+    width:40px; height: 40px; color:white
+}

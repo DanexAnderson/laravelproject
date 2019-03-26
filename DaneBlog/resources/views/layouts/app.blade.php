@@ -79,6 +79,7 @@
       <div class="row">
             <div class="col-6 col-lg-3 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/nodejs.png')}}" alt=""></div>
             <div class="col-6 col-lg-3 ml-auto"><img class="d-block w-100" src="{{ asset($photourl.'/WorkPlace/php.png')}}" alt=""></div>
+            <div class="col-6 col-lg-3 ml-auto"><img class="d-block w-100 h-75" src="{{ asset($photourl.'/WorkPlace/flutter.png')}}" alt=""></div>
 
         <div class=""><img class="" src="{{ asset($photourl.'/WorkPlace/')}}" alt=""></div>
 
@@ -97,10 +98,152 @@
     <!-- Scripts -->
    <!-- <script src="/js/app.js" type="text/javascript"></script> -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+
+
+    <footer  class="page-footer mt-5 font-small bg-light position-relative">
+
+            <div id="footer" class="bg-primary py-0">
+              <div class="container">
+
+                <!-- Grid row-->
+                <div class="row py-4 d-flex align-items-center">
+
+                  <!-- Grid column -->
+                  <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                    <h4 class="mb-0 text-white">Get connected with me on social !</h4>
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                    <!-- Facebook -->
+                    <a class="nav-item" href='https://www.facebook.com/dane.X.Anderson'>
+                    @svg('public/images/icons/facebook-square-brands', 'icon mr-4')
+                    </a>
+
+                   <!--Instagram-->
+                   <a class="nav-item" href='https://www.instagram.com/danexanderson/?hl=en'>
+                        @svg('public/images/icons/instagram-brands', 'icon mr-4')
+                   </a>
+
+                    <!--Linkedin -->
+                    <a href="https://www.linkedin.com/in/dane-anderson-b17881109/" class="nav-item" >
+                            @svg('public/images/icons/linkedin-brands', 'icon mr-4')
+                    </a>
+                  </div>
+                  <!-- Grid column -->
+
+                </div>
+                <!-- Grid row-->
+
+              </div>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left mt-5">
+
+              <!-- Grid row -->
+              <div class="row mt-3">
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+                  <!-- Content -->
+                  <h6 class="text-uppercase font-weight-bold text-primary">Dane Anderson Software Developer</h6>
+                  <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                  <p>Web and Mobile App Developer. Futuristic looking websites and mobile app designs. Awesome UI Designer.
+                     Mobile First Approach.</p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                  <!-- Links -->
+                  <h6 class="text-uppercase font-weight-bold text-primary">Frameworks</h6>
+                  <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                  <p>
+                    Angular & Ionic
+                  </p>
+                  <p>
+                    WordPress
+                  </p>
+                  <p>
+                    Laravel
+                  </p>
+                  <p>
+                    Flutter
+                  </p>
+                  <p>
+                      Xamarin & .NET
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                  <!-- Links -->
+                  <h6 class="text-uppercase font-weight-bold text-primary">Languages</h6>
+                  <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                  <p>
+                    JAVA, C#
+                  </p>
+                  <p>
+                    PHP, Nodejs
+                  </p>
+                  <p>
+                    MsSQL, MySQL, MongoDB
+                  </p>
+                  <p>
+                      HTML, CSS, JavaScript
+                    </p>
+
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+                  <!-- Links -->
+                  <h6 class="text-uppercase font-weight-bold text-primary">Contact</h6>
+                  <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                  <p>
+                    <i class="fas fa-home mr-3"></i>Kingston, Jamaica</p>
+
+                    <p><i class="fas fa-envelope mr-3"></i> Email: </p>
+                  <p class="ml-3">
+                    <b> daneanderson16@gmail.com</b></p>
+
+
+                </div>
+                <!-- Grid column -->
+
+              </div>
+              <!-- Grid row -->
+
+            </div>
+            <!-- Footer Links -->
+
+            <!-- Copyright -->
+            <div id='footer2' class="footer-copyright text-center py-3 text-white bg-dark">
+              Dane J. Anderson © 2019 Copyright :
+              <a class="text-white pl-1" href="http://workplaceja.herokuapp.com"> workplaceja.herokuapp.com</a>
+            </div>
+            <!-- Copyright -->
+
+          </footer>
+
+
+
 </body>
 
-<footer id ="footer" class=" text-center">
-    <p> copyright 2019 &copy; Dane Jason Anderson</p>
-</footer>
-
 </html>
+
+
+
