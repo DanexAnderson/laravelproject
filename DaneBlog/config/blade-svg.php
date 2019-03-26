@@ -13,7 +13,8 @@ return [
     |
     */
 
-    'svg_path' => 'resources/svg',
+   /*  'svg_path' => 'resources/svg', */
+   'svg_path' => 'public/images',
 
     /*
     |--------------------------------------------------------------------------

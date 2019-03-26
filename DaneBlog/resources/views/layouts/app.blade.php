@@ -120,17 +120,17 @@
 
                     <!-- Facebook -->
                     <a class="nav-item" href='https://www.facebook.com/dane.X.Anderson'>
-                    @svg('public/images/icons/facebook-square-brands', 'icon mr-4')
+                    @svg('/icons/facebook-square-brands', 'icon mr-4')
                     </a>
 
                    <!--Instagram-->
                    <a class="nav-item" href='https://www.instagram.com/danexanderson/?hl=en'>
-                        @svg('public/images/icons/instagram-brands', 'icon mr-4')
+                        @svg('/icons/instagram-brands', 'icon mr-4')
                    </a>
 
                     <!--Linkedin -->
                     <a href="https://www.linkedin.com/in/dane-anderson-b17881109/" class="nav-item" >
-                            @svg('public/images/icons/linkedin-brands', 'icon mr-4')
+                            @svg('/icons/linkedin-brands', 'icon mr-4')
                     </a>
                   </div>
                   <!-- Grid column -->
